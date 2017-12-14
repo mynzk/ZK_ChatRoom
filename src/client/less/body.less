@@ -1,0 +1,15 @@
+@import "../common/commonStyle";
+.body {
+    // grid-area: body;
+    background: hsla(0, 0%, 95%, 0.2);
+    display: grid;
+    grid-template-areas: 'header' 'content';
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px calc(~'(100vh - 80px)');
+    display: -ms-grid;
+    -ms-grid-template-columns: 1fr;
+    // -ms-grid-template-areas: 'header' 'content';
+    -ms-grid-template-rows: 80px calc(~'(100vh - 80px)');
+    @import "./header";
+    @import "./content";
+}

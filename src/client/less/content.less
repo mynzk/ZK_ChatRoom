@@ -1,0 +1,238 @@
+@import "../common/commonStyle";
+.content {
+    position: relative;
+    
+    @import "./roomDetails.less";
+    .contentMessages {
+        height:  calc(~'(100vh - 154px)');
+        overflow-y: scroll;
+
+        .contentMessagesWait {
+            display: block;
+            margin-top: 100px;
+        }
+
+        .contentMessagesList {
+            font-family: 'Reem Kufi','Roboto', sans-serif;
+            padding: 15px 0;
+            display: flex;
+            color:#000;
+            .timeContainer {
+                display: none;
+            }
+            &:hover {
+                .timeContainer {
+                    display: flex;
+                }
+            }
+            &.other {
+                flex-direction: row;
+
+                .containerContent {
+                    align-items: flex-start;
+                    
+                    .messageTittle {
+                        flex-direction: row;
+                    }
+                    .messageContainer{
+                        &.text {
+                            background-color: #f1f1f1;
+                            position: relative;
+                            border: 1px solid #aaa; 
+                        }
+                        &.code {
+                            position: relative;
+                            border: 1px solid #aaa; 
+                        }
+                    }
+                }
+            }
+            &.me {
+                flex-direction: row-reverse;
+                .containerContent {
+                    align-items: flex-end;
+
+                    .messageTittle {
+                        flex-direction: row-reverse;
+                    }
+
+                    .messageContainer{
+                        &.text {
+                            background-color: #b2e281;
+                            position: relative;
+                            border: 1px solid #aaa; 
+                        }
+                        &.code {
+                            position: relative;
+                            border: 1px solid #aaa; 
+                        }
+                    }
+                }
+            }
+            .avatar {
+                width: 40px;
+                margin: 5px;
+                cursor: pointer;
+            }
+            .containerContent {
+                max-width: calc(~'(100vw - 100px)');
+                display: flex;
+                flex-direction: column;
+                .messageTittle{
+                    display: flex;
+                    align-items: center;
+                    // flex-direction: row;
+                }
+                .nameContainer {
+                    font-weight: bolder;
+                    font-size: 1.2rem;
+                    color: #202020;
+                }
+                .timeContainer {
+                    font-size: 0.8rem;
+                    padding:0 10px;
+                }
+                .messageContainer {
+                    margin: 0;
+                    max-width: 100%;
+                    width: fit-content;
+                    word-break: break-word;
+                    display: inline-block;
+                    border-radius: 10px;
+                    box-shadow: 3px 3px 10px #aaa;
+                    &.text {
+                        padding: 5px 10px;
+                        box-shadow: 3px 3px 10px #aaa;
+                        font-size: 1rem;
+                    }
+                    &.image {
+                        max-width: 100%;
+                        .imageContainer {
+                            border-radius: 2%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contentFeature {
+        grid-area: contentFeature;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-top: 1px solid silver;
+        z-index: 1;
+        min-height: 20px;
+        position: relative;
+        .emojiContainer {
+            position: absolute;
+            bottom: 35px;
+            width: 412px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px #999;
+            height: auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            font-size: 1.7rem;
+            transition: all 0.1s ease-out;
+            color: #000;
+            &.display {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+            &.none {
+                visibility: hidden;
+                opacity: 0.01;
+            }
+            .emoji {
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+        .emojiClick {
+            cursor: pointer;
+            font-size: 1.7rem;
+            color: @grey9;
+            font-weight: bolder;
+            margin: 0 10px;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        .picture {
+            display: inline-grid;
+            cursor: pointer;
+            font-size: 2rem;
+            color: @grey9;
+            margin: 0 10px;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        .imgInputFile {
+            display: none;
+        }
+        .codingClick {
+            cursor: pointer;
+            font-size: 1.7rem;
+            color: @grey9;
+            font-weight: bolder;
+            margin: 0 0px;
+            user-select: none;
+            margin: 0 0 6px 8px;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        .textAreaContainer {
+            position: absolute;
+            bottom: 35px;
+            width: auto;
+            height: auto;
+            transition: all 0.1s ease-out;
+            &.display {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+            &.none {
+                opacity: 0.01;
+                visibility: hidden;
+            }
+            .textArea {
+                color: #000;
+                width: 50vw;
+                border-radius: 2px;
+                box-shadow: 0 0 10px #999;
+                height: auto;
+                background-color: rgba(255, 255, 255, 0.1);
+                font-size: 18px;
+                animation-duration: 0.4s;
+            }
+        }
+    }
+    .contentMessagesInputArea {
+        grid-area: contentMessagesInputArea;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        z-index: 1;
+        color: #000;
+        .contentMessagesInput {
+            width: 450px;
+            max-width: 90%;
+            height: 32px;
+            border-radius: 16px;
+            border: 1px solid #727272;
+            padding: 0 15px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            font-size: 16px;
+            transition: margin-top 0.3s;
+        }
+    }
+}

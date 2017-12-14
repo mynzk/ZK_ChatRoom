@@ -1,0 +1,24 @@
+.header {
+    border-bottom: 1px solid silver;
+    z-index: 2;
+    @media screen and (max-width: 768px) {
+        .toggleDetail{
+            color: #ededed;
+        }
+        background: #2e3238;
+    }
+    @media screen and (min-width: 768px) {
+        color: #2e3238;
+        background: #ededed;
+    }
+
+    .toggleDetail {
+        font-size: 1.5em;
+        text-align: center;
+        cursor: pointer;
+    }
+    iframe{
+        margin-left: 2px; 
+        margin-bottom: -5px;
+    }
+}

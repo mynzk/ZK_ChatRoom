@@ -1,0 +1,101 @@
+@import "../common/commonStyle";
+.showMoreUserInfo {
+    position: absolute;
+    width: 220px;
+    min-height: 335px;
+    background-color: #fff;
+    z-index: 3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    -moz-box-shadow: rgba(0, 0, 0, .1) 0 5px 10px;
+    -webkit-box-shadow: rgba(0, 0, 0, .1) 0 5px 10px;
+    transition: all 0.1s ease-out;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+    &.hide {
+        visibility: hidden;
+        opacity: 0.01;
+        transform: scale(0.4);
+    }
+    .avatar {
+        width: 220px;
+        height: 220px;
+        line-height: 220px;
+        font-size: 50px;
+        border-radius: 0;
+        span {
+            line-height: 220px;
+        }
+    }
+    .info {
+        padding: 0px 10px 10px 10px;
+        min-height: 74px;
+        display: grid;
+        grid-template-columns: repeat(1fr);
+        .nameArea {
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: inline-grid;
+            grid-template-columns: 1fr 25px 25px;
+            .nameContainer {
+                display: inline-grid;
+                justify-content: start;
+                align-content: center;
+            }
+            .github {
+                color: rgba(0, 0, 0, 0.65);
+                &:hover {
+                    color: @lightBlue7;
+                    text-decoration: none;
+                }
+            }
+            i {
+                display: inline-grid;
+                justify-content: end;
+                align-content: center;
+                cursor: pointer;
+                &:hover {
+                    color: @lightBlue7;
+                }
+            }
+        }
+        .followRepot {
+            border-top: 1.5px solid #c0c0c047;
+            border-bottom: 1.5px solid #c0c0c047;
+            padding: 3px 0;
+            margin: 3px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            display: inline-grid;
+            grid-template-columns: 1.4fr 1.2fr 1fr;
+            font-weight: bold;
+            height: 26px;
+            overflow-y: scroll;
+            .count {
+                margin-right: 2px;
+            }
+            .githubReport {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                cursor: pointer;
+            }
+        }
+        .infoList {
+            font-size: 0.8rem;
+            display: inline-grid;
+            grid-template-columns: 30px 1fr;
+            .label {
+                display: inline-grid;
+                justify-content: center;
+                color: #000;
+            } // .content{
+            //   display: inline-grid;
+            //   justify-content: center;
+            // }
+        }
+    }
+}

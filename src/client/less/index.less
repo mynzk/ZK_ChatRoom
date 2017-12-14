@@ -1,0 +1,31 @@
+@import "../common/commonStyle";
+
+body {
+	font-size: calc(~'0.89em + 0.2vw');
+
+	.routerContainer {
+		height: 100vh;
+
+		.window {
+			height: 100vh;
+			bottom: 0;
+			right: 0;
+			z-index: -1;
+			// background: url('//res.wx.qq.com/a/wx_fed/webwx/res/static/img/2zrdI1g.jpg') no-repeat fixed;
+			position: fixed;
+		}
+
+		.container {
+			height: 100vh;
+			position: relative;
+			
+			.body {
+				background: hsla(0, 0%, 95%, 0.2);
+				@import "./header";
+				@import "./content";
+			}
+			@import "./sider.less";
+			@import "./userDetails.less";
+		}
+	}
+}

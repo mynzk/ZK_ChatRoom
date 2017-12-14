@@ -1,0 +1,86 @@
+.contentRoomDetails {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    cursor: context-menu;
+    background-color: #eee;
+    transition: all .1s ease-out;
+    border-bottom: 1px solid #dedede;
+    box-shadow: 1px 1px 1px #e0e0e0;
+    -moz-box-shadow: 1px 1px 1px #e0e0e0;
+    -webkit-box-shadow: 1px 1px 1px #e0e0e0;
+
+    &.show {
+        z-index: 1;
+        opacity: 1;
+        // top: -2px;
+        visibility: visible;
+    }
+
+    &.hide {
+        opacity: 0;
+        top: -50px;
+        background-color: rgba(197, 202, 209, 0.5);
+        visibility: hidden;
+    }
+
+    .showRoomDetailList {
+        display: flex;
+        flex-direction: row;
+
+        .title {
+            margin-top: 0.8em;
+            font-size: 0.8em;
+            display: flex;
+            width: 55px;
+            justify-content: flex-end;
+        }
+
+        .avatarContainer {
+            flex-direction: row;
+            display: flex;
+
+            .avatar {
+                display: flex;
+                flex-direction: column;
+                width: 65px;
+                align-items: center;
+
+                .ant-badge{
+
+                    .slideAvatar {
+                        cursor: pointer;
+                    }
+                }
+
+                .ant-badge-dot{
+                    top: unset;
+                    bottom: -0.2em;
+                    box-shadow: 0 0 0 2px #2f3136;
+                }
+                .online{
+                    .ant-badge-dot{
+                        background-color: #43b581;
+                    }
+                }
+                .busy{
+                    .ant-badge-dot{
+                        background-color: #faa61a;
+                    }
+                }
+                .offline{
+                    .ant-badge-dot{
+                        background-color: #747f8d;
+                    }
+                }
+
+                .name {
+                    color: #888;
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+}

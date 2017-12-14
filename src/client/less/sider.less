@@ -1,0 +1,89 @@
+@import "../common/commonStyle";
+.sider {
+    color: #fff;
+    overflow-y: auto;
+    background: #2e3238;
+    .myInfo{
+        border-bottom: 1px solid #24272c;
+
+        .ant-badge-dot{
+            top: unset;
+            width: 10px;
+            height: 10px;
+            bottom: -0.2em;
+            box-shadow: 0 0 0 2px #2f3136;
+        }
+        .online{
+            .ant-badge-dot{
+                background-color: #43b581;
+            }
+        }
+        .busy{
+            .ant-badge-dot{
+                background-color: #faa61a;
+            }
+        }
+        .offline{
+            .ant-badge-dot{
+                background-color: #747f8d;
+            }
+        }
+
+        .ant-badge{
+            margin: 12px;
+
+            .myAvatar{
+                cursor: pointer;
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+
+        .myName{
+            font-size: 1.4rem;
+        }
+    }
+    .groupList {
+        height: 64px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 1px solid #292c33;
+        transition: all 0.1s ease-out;
+        text-decoration: none;
+        &:hover {
+            padding-left: 5px;
+        }
+        &.active {
+            background-color: #3a3f45;
+        }
+        .slideAvatar {
+            margin: 10px;
+        }
+        .groupName {
+            // margin-left: 12px;
+        }
+    }
+    .addgroup {
+        height: 45px;
+        text-align: center;
+        color: #fff;
+        display: inline-block;
+        width: 100%;
+        border-bottom: 1px solid #292c33;
+        padding: 10px;
+        cursor: text;
+        .form {
+            display: inline;
+            .input {
+                background-color: inherit;
+                width: 56%;
+                margin-left: 5px;
+                padding-left: 5px;
+                border: 1px solid rgba(21, 137, 231, 0.863);
+            }
+        }
+    }
+}
